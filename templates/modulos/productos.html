@@ -1,0 +1,408 @@
+{% extends "./modulos/menu.html" %}
+{% block body %}
+{{ super() }}
+<div class="content-wrapper">
+
+  <section class="content-header">
+    
+    <h1>
+      
+      Administrar Productos
+    
+    </h1>
+
+    <ol class="breadcrumb">
+      
+      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      
+      <li class="active">Administrar Proveedores</li>
+    
+    </ol>
+
+  </section>
+
+  <section class="content">
+
+    <div class="box">
+
+      <div class="box-header with-border">
+
+       <button class="btn btn-warning" data-toggle="modal" data-target="#modalAgregarProveedor">
+         
+         Agregar Proveedor
+
+       </button>
+
+      </div>
+      <div class="box-body">
+        
+        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+          <thead>
+            <tr>
+              <th style="width:10px">#</th>
+              <th>Nit</th>
+              <th>Nombre Comercial</th>
+              <th>Telefono</th>
+              <th>Direccion</th>
+              <th>Correo Electronico</th>
+              <th>Persona de Contacto</th>
+              <th>Acciones</th>
+
+            </tr>
+
+          </thead>
+          <tbody>
+              <tr>
+                <td>1</td>
+                <td>900123456-7</td>
+                <td>EMPRESA XYZ SAS</td>
+                <td>31212345678</td>
+                <td>CALLE 1  2 3</td>
+                <td>empresaxyz@gmail.com</td>
+                <td>Miguel Hart</td>
+                    <td>              <div class="btn-group">
+
+                      <button class="btn btn-success btnEditarProveedor" idProveedor="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarProveedor"><i class="fa fa-search"></i></button>
+                        
+                      <button class="btn btn-warning btnEditarProveedor" idProveedor="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarProveedor"><i class="fa fa-pencil"></i></button>
+
+                      <button class="btn btn-danger btnEliminarProveedor" idProveedor="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
+
+                    </div>  </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>901987654-3</td>
+                <td>EMPRESA ABC SAS</td>
+                <td>3009876543</td>
+                <td>KRA 3  2 1</td>
+                <td>empresaabc@gmail.com</td>
+                <td>Juan Perez</td>
+                    <td>              <div class="btn-group">
+                      
+                      <button class="btn btn-success btnEditarProveedor" idProveedor="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarProveedor"><i class="fa fa-search"></i></button>
+
+                      <button class="btn btn-warning btnEditarProveedor" idProveedor="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarProveedor"><i class="fa fa-pencil"></i></button>
+
+                      <button class="btn btn-danger btnEliminarProveedor" idProveedor="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
+
+                    </div>  </td>
+              </tr>
+           
+          </tbody>
+
+
+        </table>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+</div>
+<!--=====================================
+MODAL AGREGAR PROVEEDOR
+======================================-->
+
+<div id="modalAgregarProveedor" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post" enctype="multipart/form-data">
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header" style="background:#f37915; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Agregar Proveedor</h4>
+
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA EL NIT -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar Nit" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL NOMBRE -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-industry"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL Telefono -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar Telefono" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA DIRECCION -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar Direccion" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA CORREO -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar Correo" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA PERSONA DE CONTACTO -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar Persona de Contacto" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-warning">Guardar Proveedor</button>
+
+        </div>
+
+        <!--<?php
+
+          $crearUsuario = new ControladorUsuarios();
+          $crearUsuario -> ctrCrearUsuario();
+
+        ?>-->
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!--=====================================
+MODAL EDITAR PROVEEDOR
+======================================-->
+
+<div id="modalEditarProveedor" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post" enctype="multipart/form-data">
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header" style="background:#f37915; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Editar Proveedor</h4>
+
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA EL NIT -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar Nit" readonly="">
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL NOMBRE -->
+            
+            <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-industry"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL Telefono -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar Telefono" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA DIRECCION -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar Direccion" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA CORREO -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar Correo" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA PERSONA DE CONTACTO -->
+
+             <div class="form-group">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar Persona de Contacto" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-warning">Actualizar Proveedor</button>
+
+        </div>
+
+        <!--<?php
+
+          $editarUsuario = new ControladorUsuarios();
+          $editarUsuario -> ctrEditarUsuario();
+
+        ?>-->
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!--<?php
+$borrarUsuario = new ControladorUsuarios();
+$borrarUsuario ->ctrBorrarUsuario();
+
+?>-->
+{% endblock %}
