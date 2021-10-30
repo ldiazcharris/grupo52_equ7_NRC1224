@@ -1,0 +1,206 @@
+{% extends "./modulos/menu.html" %}
+{% block body %}
+{{ super() }}
+<div class="content-wrapper">
+
+  <section class="content-header">
+    
+    <h1>
+      
+      Detalle Proveedor
+    
+    </h1>
+
+    <ol class="breadcrumb">
+      
+      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      
+      <li class="active">Detalle Proveedor</li>
+    
+    </ol>
+
+  </section>
+
+  <section class="content">
+
+    <div class="box">
+
+      <div class="box-body">
+
+            <!-- ENTRADA PARA EL NIT -->
+            
+            <div class="form-group row">
+
+              <div class="col-lg-4 col-xs-12" >
+              
+                <div class="input-group">
+                
+                  <span class="input-group-addon"><i class="fa fa-lock"></i></span> 
+
+                  <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Nit" required>
+
+                </div>
+
+              </div>
+
+              <div class="col-lg-4 col-xs-12" >
+
+                <!-- ENTRADA PARA EL NOMBRE -->
+                
+                <div class="input-group">
+              
+                  <span class="input-group-addon"><i class="fa fa-industry"></i></span> 
+
+                  <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Nombre" required>
+
+                </div>
+
+              </div>
+
+              <!-- ENTRADA PARA EL Telefono -->
+
+             <div class="col-lg-4 col-xs-12">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Telefono" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+            </div>
+
+            <div class="form-group row">
+
+              <div class="col-lg-4 col-xs-12" >
+
+               <!-- ENTRADA PARA LA DIRECCION -->
+              
+                <div class="input-group">
+                
+                  <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                  <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Direccion" id="nuevoUsuario" required>
+
+                </div>
+
+              </div>
+
+              <!-- ENTRADA PARA LA CORREO -->
+
+             <div class="col-lg-4 col-xs-12">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Correo" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA LA PERSONA DE CONTACTO -->
+
+             <div class="col-lg-4 col-xs-12">
+              
+              <div class="input-group">
+              
+                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Persona de Contacto" id="nuevoUsuario" required>
+
+              </div>
+
+            </div>
+
+            </div>
+
+          </div>
+
+    </div>
+
+    <h3>
+      
+      Productos Asociados
+    
+    </h3>
+
+    <div class="box">
+
+      <div class="box-body">
+        
+        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+          <thead>
+            <tr>
+              <th style="width:10px">#</th>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Stock</th>
+              <th>Precio Compra</th>
+              <th>Precio Venta</th>
+              <th>Ultima Compra</th>
+              <th>Acciones</th>
+
+            </tr>
+
+          </thead>
+          <tbody>
+              <tr>
+                <td>1</td>
+                <td>1001</td>
+                <td>REDMI NOTE 8</td>
+                <td>10</td>
+                <td>$ 450.000</td>
+                <td>$ 600.000</td>
+                <td>14/10/2021 09:00:00</td>
+                
+                    <td>              <div class="btn-group">
+
+                      <button class="btn btn-success btnEditarProveedor" idProveedor="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarProveedor"><i class="fa fa-search"></i></button>
+                        
+                      <button class="btn btn-warning btnEditarProveedor" idProveedor="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarProveedor"><i class="fa fa-pencil"></i></button>
+
+                      <button class="btn btn-danger btnEliminarProveedor" idProveedor="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
+
+                    </div>  </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>1002</td>
+                <td>REDMI NOTE 2021 9C</td>
+                <td>50</td>
+                <td>$ 800.000</td>
+                <td>$ 1.200.000</td>
+                <td>10/10/2021 07:00:00</td>
+                
+                    <td>              <div class="btn-group">
+
+                      <button class="btn btn-success btnEditarProveedor" idProveedor="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarProveedor"><i class="fa fa-search"></i></button>
+                        
+                      <button class="btn btn-warning btnEditarProveedor" idProveedor="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarProveedor"><i class="fa fa-pencil"></i></button>
+
+                      <button class="btn btn-danger btnEliminarProveedor" idProveedor="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
+
+                    </div>  </td>
+              </tr>
+           
+          </tbody>
+
+
+        </table>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+</div>
+{% endblock %}
